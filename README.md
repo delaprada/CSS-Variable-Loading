@@ -8,4 +8,4 @@
 
 ## 实现效果
 
-![image](./loading.png)
+![](https://delaprada-1301716802.cos.ap-guangzhou.myqcloud.com/loading.png)
