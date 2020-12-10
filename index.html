@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bar {
+        height: 20px;
+        width: 300px;
+        background-color: rgba(212, 212, 212, 0.548);
+      }
+      .bar::before {
+        display: block;
+        /* 
+        counter-reset可用于标识计数器作用域
+        例如下面标识progress计数器值为变量--percent
+         */
+        counter-reset: progress var(--percent);
+        /* 
+        counter主要用于给元素插入计数器的值
+        例如下面给content插入了progress加上百分号作为值
+         */
+        content: counter(progress) "%";
+        /* 
+        相当于将before块的宽度设置为整体宽度的多少百分比
+         */
+        width: calc(1% * var(--percent));
+        color: #fff;
+        background-color: #2486ff;
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <label> 图片一： </label>
+    <div class="bar" style="--percent: 60"></div>
+    <label> 图片二： </label>
+    <div class="bar" style="--percent: 40"></div>
+    <label> 图片三： </label>
+    <div class="bar" style="--percent: 20"></div>
+  </body>
+</html>
